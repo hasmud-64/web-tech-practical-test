@@ -1,11 +1,11 @@
 /* ============================================================
    SUZA Web Technologies — Practical Test
-   Student      : [WRITE YOUR FULL NAME]
-   Reg No.      : [WRITE YOUR REG NUMBER]
-   Question     : Q[XXX] — [PASTE YOUR QUESTION TITLE]
+   Student      : mahamoud saleh ramadhan
+   Reg No.      : 24bit050
+   Question     : Q41 — Build a STUDENT REGISTRATION FORM for SUZA
    ============================================================ */
 
-/* ---------- Starter reset (you may keep or modify) ---------- */
+/* ---------- Reset ---------- */
 *,
 *::before,
 *::after {
@@ -27,10 +27,24 @@ img {
 }
 
 a {
-  color: #0a3d62;
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-/* ---------- Header / Footer (do not over-edit) ---------- */
+a:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+/* ---------- Variables ---------- */
+:root {
+  --primary-color: #0a3d62;
+  --secondary-color: #636e72;
+  --background-color: #ffffff;
+  --accent-color: #0984e3;
+}
+
+/* ---------- Header / Footer ---------- */
 .page-header,
 .page-footer {
   display: flex;
@@ -52,7 +66,7 @@ a {
 
 .page-header .subtitle {
   margin: 0;
-  color: #636e72;
+  color: var(--secondary-color);
   font-size: 0.9rem;
 }
 
@@ -75,31 +89,66 @@ main {
   padding: 2rem 1.5rem;
 }
 
-/* ============================================================
-   YOUR SOLUTION CSS GOES BELOW
-   Delete the .solution placeholder rules once you start.
-   ============================================================ */
-
-.solution {
-  background: #fff;
-  border: 1px dashed #b2bec3;
+/* ---------- Form Styling ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--background-color);
   padding: 2rem;
   border-radius: 10px;
-  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.solution img {
-  margin: 1rem auto;
+fieldset {
+  border: 1px solid var(--secondary-color);
   border-radius: 8px;
+  padding: 1rem;
 }
 
-/* ---------- Example media query (mobile) ---------- */
-@media (max-width: 600px) {
+legend {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+label {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #74b9ff;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 375px) {
   .page-header {
     flex-direction: column;
     text-align: center;
   }
   main {
     padding: 1rem;
+  }
+  form {
+    padding: 1rem;
+    font-size: 0.9rem;
   }
 }
